@@ -20,4 +20,5 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Gunakan port dari Railway
+    app.run(debug=False, host='0.0.0.0', port=port)
